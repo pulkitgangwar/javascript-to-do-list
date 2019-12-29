@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("./Images/circle-blues.png");
+}
+
+.container__heading {
+  padding-top: 2rem;
+  color: goldenrod;
+  font-size: 8rem;
+  text-align: center;
+}
+
+.container__form {
+  text-align: center;
+}
+
+.container__input {
+  width: 50%;
+  padding: 2rem 1.5rem;
+  font-family: inherit;
+  font-size: 2rem;
+}
+
+.container__btn {
+  padding: 2rem 5rem;
+  font-family: inherit;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  border: 2px solid white;
+  background-color: white;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.container__btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.container__result {
+  /* margin-top: 2rem; */
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.container__result--div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+  animation: slideIn 0.3s linear;
+  /* background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("./Images/snowflake.svg");
+    */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.container__close {
+  font-size: 4rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* @keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container__heading{
+    font-size:5rem;
+  }
+  
+  .container__input{
+    padding:1rem 1rem;
+    font-size:1.5rem;
+  }
+
+  .container__btn {
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+  }
+}
