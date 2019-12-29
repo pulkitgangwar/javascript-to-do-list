@@ -59,7 +59,8 @@ body {
 .container__result {
   /* margin-top: 2rem; */
   width: 80%;
-  margin: 2rem auto;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .container__result--div {
@@ -107,13 +108,13 @@ body {
 }
 
 @media only screen and (max-width: 450px) {
-  .container__heading{
-    font-size:5rem;
+  .container__heading {
+    font-size: 5rem;
   }
-  
-  .container__input{
-    padding:1rem 1rem;
-    font-size:1.5rem;
+
+  .container__input {
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
   }
 
   .container__btn {
