@@ -21,6 +21,14 @@ body {
   background-image: url("./Images/circle-blues.png");
 }
 
+.container__heading--wrapper{
+  width:100%;
+}
+
+.container__heading--3{
+  word-break: break-all;
+}
+
 .container__heading {
   padding-top: 2rem;
   color: goldenrod;

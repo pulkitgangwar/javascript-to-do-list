@@ -1,8 +1,23 @@
-localStorageCreation();
+window.onload = () => {
+  console.log("Merry Christmas");
+  show();
+};
+
+const todo = new Todo();
+
+// DOM
 const input = document.querySelector(".container__input");
 const submitBtn = document.querySelector(".container__btn");
 const resultContainer = document.querySelector(".container__result");
-// localStorage.todos = JSON.stringify([]);
+
+// add todo
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  todo.addTodos(input.value);
+  input.value = "";
+});
+
+// custom
 const customImagesArray = [
   "./images/1.svg",
   "./images/2.svg",
@@ -12,41 +27,17 @@ const customImagesArray = [
   "./images/6.svg",
   "./images/7.svg",
   "./images/8.svg",
-  "./images/9.svg"
+  "./images/9.svg",
 ];
 const colorArray = [
   "greenyellow",
   "orangered",
   "goldenrod",
   "violet",
-  "royalblue"
+  "royalblue",
 ];
 
-function localStorageCreation() {
-  if (localStorage.todos == null) {
-    localStorage.todos = JSON.stringify([]);
-  }
-}
-
-setInterval(localStorageCreation, 10000);
-
-submitBtn.addEventListener("click", function(e) {
-  e.preventDefault();
-
-  if (input.value !== "") {
-    addTodo(input.value);
-    input.value = "";
-  }
-});
-
-function addTodo(input) {
-  const todoArray = JSON.parse(localStorage.todos);
-  todoArray.push(input);
-  localStorage.todos = JSON.stringify(todoArray);
-
-  show();
-}
-
+// show todo
 function show() {
   const todos = JSON.parse(localStorage.todos);
 
@@ -63,8 +54,10 @@ function show() {
       rgba(255, 255, 255, 0.5)
     ),
     url(${backgroundImages});border-bottom:5px solid ${color}">
+    <div class="container__heading--wrapper">
     <h3 class="container__heading--3">${todo}</h3>
-    <a  class="container__close" data-close onclick="remove(this)">&times;</a>
+    </div>
+    <a  class="container__close" data-close onclick="todo.removeTodos(this.parentElement.id)">&times;</a>
   </div>
     `;
     })
@@ -72,22 +65,3 @@ function show() {
 
   resultContainer.innerHTML = newTodo;
 }
-
-function remove(ob) {
-  const todos = JSON.parse(localStorage.todos);
-  let id = ob.parentElement.id;
-  todos.splice(id, 1);
-  localStorage.todos = JSON.stringify(todos);
-  show();
-}
-
-// function getTodos() {
-//   if (localStorage.todos === null) {
-//     return (localStorage.todos = JSON.stringify([]));
-//   } else {
-//     return JSON.parse(localStorage.todos);
-//   }
-// }
-// getTodos();
-
-show();
