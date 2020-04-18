@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "lib": ["DOM", "ES6"],
+    "outDir": "./public",
+    "rootDir": "./src"
+  }
+}
